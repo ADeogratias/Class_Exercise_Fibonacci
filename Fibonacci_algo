@@ -1,0 +1,23 @@
+# Fibonacci in class exercise algo
+
+def fibonacci (user_input):
+    fibonacci_elements = [0,1]
+
+    # testing if the user input is 0 to print 0
+    if user_input == 0:
+        fibonacci_elements = [0]
+
+    # testing if the user input is greater than 1 to calculate it's Fibonacci
+    if user_input > 1:
+        list_element = 1
+
+        # calculating user input fibonacci by adding the 2 last elements to get the last element of the list
+        while list_element < user_input:
+            last_list_element_value =  fibonacci_elements[list_element - 1] + fibonacci_elements[list_element]
+            fibonacci_elements.append(last_list_element_value)
+            list_element += 1
+
+    return fibonacci_elements
+    
+#calling the function and passing it a user input number
+print(fibonacci(int(input("Please, enter a non negative value number: "))))
